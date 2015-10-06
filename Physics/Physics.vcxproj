@@ -10,6 +10,18 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gameObjectManager.cpp">
+      <FileType>CppCode</FileType>
+    </ClCompile>
+    <ClCompile Include="physics.cpp" />
+    <ClCompile Include="physicsObject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameObjectManager.h" />
+    <ClInclude Include="physics.h" />
+    <ClInclude Include="physicsObject.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{86B8BFB7-7F37-4910-9592-968DCAF55A36}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -39,7 +51,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>\Box2D;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
