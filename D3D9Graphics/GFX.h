@@ -19,8 +19,8 @@
 #include "Vertex.h"
 // TODO: remove later
 #include "DirectInput.h"
-// TODO: Change to proper directory once integration begins
-#pragma comment (lib, "../Debug/D3D9GraphicsD.lib")
+
+#pragma comment (lib, "D3D9GraphicsD.lib")
 
 #define GFX		GFXCore::Graphics::get()
 /*!
