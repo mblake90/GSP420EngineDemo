@@ -12,6 +12,7 @@
 #include <d3dx9core.h>
 #include <DxErr.h>
 #include <tchar.h>
+#include <assert.h>
 
 #pragma comment(lib, "d3d9.lib")
 #pragma comment(lib, "d3dx9.lib")
@@ -24,7 +25,7 @@
 #define WND_CAPTION_LEN		64
 #define WINDOW_WIDTH		1024
 #define WINDOW_HEIGHT	768
-#define CHECK_OUT_OF_BOUNDS(id, size)		{ if(id >= size) { ErrorMsg(L"Accessing Past Bounds", L"Past Vector Bounds Error"); return; }}
+#define CHECK_OUT_OF_BOUNDS(id, size)		{ if(id >= size) { ErrorMsg(L"Accessing Past Bounds", L"Past Vector Bounds Error"); assert(false); }}
 
 #if defined(DEBUG) | defined(_DEBUG)
 #ifndef HR
