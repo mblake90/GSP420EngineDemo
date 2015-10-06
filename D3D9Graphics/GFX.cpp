@@ -189,6 +189,7 @@ void GFXCore::Graphics::addToTextRenderList(const int* idsToRender, const int co
 		return;
 	}
 #endif
+
 	if (count >= (signed)textRenderList.size())
 		textRenderList.resize(textRenderList.size() * 2);
 
