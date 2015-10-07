@@ -10,6 +10,11 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="defines.h" />
+    <ClInclude Include="UIMain.h" />
+    <ClInclude Include="UI_Interface.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5D0D196A-232A-4BE8-9811-DEE51D4AD3F1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
