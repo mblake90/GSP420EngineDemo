@@ -6,7 +6,7 @@
  *
  * 
  */
-#include "DirectInput.h"
+#include "../Main/DirectInput.h"
 #include "Camera.h"
 
 using namespace GFXCore;

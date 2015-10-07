@@ -10,6 +10,31 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ABC.h" />
+    <ClInclude Include="App.h" />
+    <ClInclude Include="AsteroidManager.h" />
+    <ClInclude Include="DirectInput.h" />
+    <ClInclude Include="EnemyManager.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="PickupManager.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="ProjectileManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="AsteroidManager.cpp" />
+    <ClCompile Include="DirectInput.cpp" />
+    <ClCompile Include="EnemyManager.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="PickupManager.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ProjectileManager.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FA8F99D3-8968-4FEF-A750-9060067EFD12}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

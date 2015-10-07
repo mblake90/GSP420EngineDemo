@@ -95,11 +95,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="abc.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="D3DCore.h" />
     <ClInclude Include="D3DUtils.h" />
-    <ClInclude Include="DirectInput.h" />
     <ClInclude Include="GFX.h" />
     <ClInclude Include="Models.h" />
     <ClInclude Include="resource.h" />
@@ -112,7 +110,6 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="D3DCore.cpp" />
-    <ClCompile Include="DirectInput.cpp" />
     <ClCompile Include="GFX.cpp" />
     <ClCompile Include="Models.cpp" />
     <ClCompile Include="Shaders.cpp" />
