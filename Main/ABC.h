@@ -3,9 +3,11 @@
 #pragma once
 
 //d3d includes and libraries
-#include <d3d9.h>
-#include <d3dx9.h>
-#pragma comment(lib, "d3d9.lib")
+// SAM
+#include "D3DUtils.h"
+// #include <d3d9.h>
+// #include <d3dx9.h>
+// #pragma comment(lib, "d3d9.lib")
 
 namespace GSP420
 {
@@ -60,6 +62,15 @@ namespace GSP420
 		inline void toggleEnabled() { bEnabled = !bEnabled; }
 		inline void setEnabled(const bool enabled) { bEnabled = enabled; }
 		inline void setObjectType(ObjType t) { eType = t; }
+
+		inline const D3DXVECTOR3& getPosition() const;
+		inline const D3DXVECTOR3& getVelocity() const;
+		inline const D3DXVECTOR3& getFixedRotation() const;
+		inline const D3DXVECTOR3& getScale() const;
+	//	inline int getHealth() const;
+		inline int getModelId() const;
+		inline int getTextureId() const;
+
 		//ABC(const ABC&);
 		virtual ~ABC() {}
 
@@ -67,6 +78,7 @@ namespace GSP420
 		D3DXVECTOR3		position;
 		D3DXVECTOR3		velocity;
 		D3DXVECTOR3		fixedRotation;
+		D3DXVECTOR3		scale;
 
 		ObjType		eType;
 
@@ -78,4 +90,11 @@ namespace GSP420
 		bool	bEnabled;
 	};
 
+
+	const D3DXVECTOR3& GSP420::ABC::getPosition() const	{ return position; }
+	const D3DXVECTOR3& GSP420::ABC::getVelocity() const { return velocity; }
+	const D3DXVECTOR3& GSP420::ABC::getFixedRotation() const { return fixedRotation; }
+	const D3DXVECTOR3& GSP420::ABC::getScale() const { return scale; }
+	int GSP420::ABC::getModelId() const	{ return nModelId; }
+	int GSP420::ABC::getTextureId() const { return nTextureId; }
 }

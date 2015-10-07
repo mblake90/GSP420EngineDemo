@@ -7,11 +7,11 @@
 //Physics:
 //	Size & position of buttons
 
-#include "GSP420EngineDemo/Main/GameState.h"
-#include "Graphics\GFX.h"
+#include "..\Main\GameState.h"
+#include "..\D3D9Graphics\GFX.h"
 #include "defines.h"
 #include <vector>
-#include "Main\DirectInput.h"
+#include "..\Main\DirectInput.h"
 using namespace std;
 using GFXCore::SpriteData;
 
