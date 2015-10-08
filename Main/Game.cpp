@@ -1,23 +1,21 @@
 //Game class created by Darrell Smith and edited by Brent Spector
-
-#include "Game.h"
-
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
-
-#include "../D3D9Graphics/GFX.h"
 #include "DirectInput.h"
+#include "GFX.h"
+#include "Game.h"
 #include "Logger.h"
 
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, PSTR, int)
-{
-	srand((unsigned)time(NULL));
-	if (!GFX->initGFX(hInstance, L"Space Game"))
-		LOGGER->Write(L"WinMain: Could not initialized graphics core", true);
-	Game::Instance()->Run();
-	Game::Instance()->Delete();
-	return 1;
-}
+// SAM
+// int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, PSTR, int)
+// {
+// 	srand((unsigned)time(NULL));
+// 	if (!GFX->initGFX(hInstance, L"Space Game"))
+// 		LOGGER->Write(L"WinMain: Could not initialized graphics core", true);
+// 	Game::Instance()->Run();
+// 	Game::Instance()->Delete();
+// 	return 1;
+// }
 
 void Game::Run()
 {
@@ -89,29 +87,29 @@ void Game::init()
 	//will always start with the Init and then Menu states
 	States[STATE_INIT].init();
 	States[STATE_MENU].init();
-	State = STATE_MENU;
+	currentState = STATE_MENU;
 	QuitNow = false;
 
 }
 
 void Game::onLostDevice()
 {
-	States[State].onLostDevice();
+	States[currentState].onLostDevice();
 }
 
 void Game::onResetDevice()
 {
-	States[State].onLostDevice();
+	States[currentState].onLostDevice();
 }
 
 void Game::update(const float dt)
 {
-	States[State].update(dt);
+	States[currentState].update(dt);
 }
 
 void Game::render()
 {
-	States[State].render();
+	States[currentState].render();
 }
 
 void Game::shutdown()
@@ -124,11 +122,11 @@ void Game::shutdown()
 
 void Game::changeState(GAMESTATE newstate)
 {
-	if(newstate != State)
+	if(newstate != currentState)
 	{
-		States[State].shutdown();
-		State = newstate;
-		States[State].init();
+		States[currentState].shutdown();
+		currentState = newstate;
+		States[currentState].init();
 		paused = false;
 	}
 }

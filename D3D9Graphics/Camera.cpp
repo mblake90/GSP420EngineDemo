@@ -123,14 +123,14 @@ void Camera::update(float dt, float offsetHeight)
 	// Find the net direction the camera is traveling in (since the
 	// camera could be running and strafing).
 	D3DXVECTOR3 dir(0.0f, 0.0f, 0.0f);
- 	if (gDInput->keyDown(DIK_W))
- 		dir += vLlookWorld;
- 	if (gDInput->keyDown(DIK_S))
- 		dir -= vLlookWorld;
- 	if (gDInput->keyDown(DIK_D))
- 		dir += vRigthWorld;
- 	if (gDInput->keyDown(DIK_A))
- 		dir -= vRigthWorld;
+//  	if (gDInput->keyDown(DIK_W))
+//  		dir += vLlookWorld;
+//  	if (gDInput->keyDown(DIK_S))
+//  		dir -= vLlookWorld;
+//  	if (gDInput->keyDown(DIK_D))
+//  		dir += vRigthWorld;
+//  	if (gDInput->keyDown(DIK_A))
+//  		dir -= vRigthWorld;
 
 	// Move at m_speed along net direction.
 	D3DXVec3Normalize(&dir, &dir);
@@ -163,22 +163,22 @@ void Camera::update(float dt, float offsetHeight)
 
 
 	// We rotate at a fixed speed.
-	float pitch = gDInput->mouseDY() / 150.0f;
-	float yAngle = gDInput->mouseDX() / 150.0f;
+// 	float pitch = gDInput->mouseDY() / 150.0f;
+// 	float yAngle = gDInput->mouseDX() / 150.0f;
 
 
 	// Rotate camera's look and up vectors around the camera's right vector.
-	D3DXMATRIX R;
-	D3DXMatrixRotationAxis(&R, &vRigthWorld, pitch);
-	D3DXVec3TransformCoord(&vLlookWorld, &vLlookWorld, &R);
-	D3DXVec3TransformCoord(&vUpWorld, &vUpWorld, &R);
+// 	D3DXMATRIX R;
+// 	D3DXMatrixRotationAxis(&R, &vRigthWorld, pitch);
+// 	D3DXVec3TransformCoord(&vLlookWorld, &vLlookWorld, &R);
+// 	D3DXVec3TransformCoord(&vUpWorld, &vUpWorld, &R);
 
 
 	// Rotate camera axes about the world's y-axis.
-	D3DXMatrixRotationY(&R, yAngle);
-	D3DXVec3TransformCoord(&vRigthWorld, &vRigthWorld, &R);
-	D3DXVec3TransformCoord(&vUpWorld, &vUpWorld, &R);
-	D3DXVec3TransformCoord(&vLlookWorld, &vLlookWorld, &R);
+// 	D3DXMatrixRotationY(&R, yAngle);
+// 	D3DXVec3TransformCoord(&vRigthWorld, &vRigthWorld, &R);
+// 	D3DXVec3TransformCoord(&vUpWorld, &vUpWorld, &R);
+// 	D3DXVec3TransformCoord(&vLlookWorld, &vLlookWorld, &R);
 
 
 	// Rebuild the view matrix to reflect changes.

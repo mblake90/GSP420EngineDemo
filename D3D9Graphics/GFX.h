@@ -18,7 +18,7 @@
 #include "Shaders.h"
 #include "Vertex.h"
 // TODO: remove later
-#include "DirectInput.h"
+// #include "DirectInput.h"
 
 #pragma comment (lib, "D3D9GraphicsD.lib")
 
